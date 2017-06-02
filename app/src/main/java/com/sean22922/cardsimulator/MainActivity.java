@@ -1,23 +1,18 @@
 package com.sean22922.cardsimulator;
 
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.net.Uri;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 public class MainActivity extends AppCompatActivity
@@ -40,11 +35,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        View popupView = getLayoutInflater().inflate(R.layout.popup_about, null);
-        about=new PopupWindow(popupView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
-        about.setTouchable(true);
-        about.setOutsideTouchable(true);
-        about.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
     }
 
     @Override
