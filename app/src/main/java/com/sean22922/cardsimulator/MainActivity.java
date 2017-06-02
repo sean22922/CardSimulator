@@ -1,8 +1,13 @@
 package com.sean22922.cardsimulator;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,15 +17,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.net.Uri;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
-
+    private PopupWindow about;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -31,6 +39,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View popupView = getLayoutInflater().inflate(R.layout.popup_about, null);
+        about=new PopupWindow(popupView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, true);
+        about.setTouchable(true);
+        about.setOutsideTouchable(true);
+        about.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
     }
 
     @Override
@@ -58,10 +72,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent isettings=new Intent();
-            isettings.setClass(MainActivity.this,SettingsActivity.class);
-            startActivity(isettings);
+        if (id == R.id.about) {
+            AlertDialog.Builder b=new AlertDialog.Builder(MainActivity.this);
+            b.setTitle(getString(R.string.about));
+            b.setMessage(R.string.aboutmsg);
+            b.setPositiveButton(R.string.ok,new DialogInterface.OnClickListener(){
+                @Override
+                public void onClick(DialogInterface d,int witch){
+
+                }
+            });
+            b.create().show();
             return true;
         }
 
