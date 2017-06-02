@@ -1,8 +1,11 @@
 package com.sean22922.cardsimulator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.net.Uri;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +72,9 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent isettings=new Intent();
+            isettings.setClass(MainActivity.this,SettingsActivity.class);
+            startActivity(isettings);
             return true;
         }
 
@@ -80,8 +87,29 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        switch (id){
+            case R.id.FGO:
+                FragmentTransaction ftf=getSupportFragmentManager().beginTransaction();
+                ftf.replace(R.id.container,FGO.newInstance(0));
+                ftf.commitAllowingStateLoss();
+                break;
+            case R.id.CC:
+                FragmentTransaction ftc=getSupportFragmentManager().beginTransaction();
+                ftc.replace(R.id.container,CC.newInstance(1));
+                ftc.commitAllowingStateLoss();
+                break;
+            case R.id.customize:
+                FragmentTransaction ftcs=getSupportFragmentManager().beginTransaction();
+                ftcs.replace(R.id.container,Custom.newInstance(2));
+                ftcs.commitAllowingStateLoss();
+                break;
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    @Override
+    public void onFragmentInteraction(Uri uri){
+
     }
 }
