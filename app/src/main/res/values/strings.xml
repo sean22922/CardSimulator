@@ -4,7 +4,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">設定</string>
+    <string name="action_about">關於</string>
     <string name="nav_text_view_1">抽卡模擬器</string>
     <string name="nav_text_view_2">歐氣滿滿的一天</string>
     <string name="nav_button_1">Fate/Grand Order</string>
