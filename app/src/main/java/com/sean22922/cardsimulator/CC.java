@@ -4,15 +4,22 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class CC extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-
+    private EditText times;
+    private Button chou;
+    private TextView result;
+    private ProbabilityRandom pr;
     public CC() {
         // Required empty public constructor
     }
@@ -34,8 +41,35 @@ public class CC extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cc, container, false);
+        View view=inflater.inflate(R.layout.fragment_fgo, container, false);
+        times=(EditText) view.findViewById(R.id.times);
+        chou=(Button)view.findViewById(R.id.chou);
+        result=(TextView)view.findViewById(R.id.result);
+        result.setMovementMethod(new ScrollingMovementMethod());
+        chou.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                int t=1;
+                try{
+                    t=Integer.parseInt(times.getText().toString());
+                }catch (NumberFormatException  e){
+                    result.setText(getString(R.string.wrongtimes));
+                }
+                StringBuilder sb=new StringBuilder();
+                for(int i=1;i<=t;i++){
+                    sb.append(getString(R.string.tx).replaceFirst("times",String.valueOf(i))+": ");
+                    sb.append(pr.rand()+"\n");
+                }
+                result.setText(sb.toString());
+            }
+        });
+
+        pr=new ProbabilityRandom();
+        pr.add(getString(R.string.cc_ssr),0.07);
+        pr.add(getString(R.string.cc_sr),0.2);
+        pr.add(getString(R.string.cc_r),0.73);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

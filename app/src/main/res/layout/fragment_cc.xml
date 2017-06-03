@@ -5,9 +5,41 @@
     tools:context="com.sean22922.cardsimulator.CC">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/cc_frag" />
+        android:orientation="horizontal">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/times"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/chou_times"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/chou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/chou" />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/result"
+                android:scrollbars="vertical"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </FrameLayout>

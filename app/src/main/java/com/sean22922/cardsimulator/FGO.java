@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class FGO extends Fragment {
         times=(EditText) view.findViewById(R.id.times);
         chou=(Button)view.findViewById(R.id.chou);
         result=(TextView)view.findViewById(R.id.result);
+        result.setMovementMethod(new ScrollingMovementMethod());
         chou.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -65,16 +67,12 @@ public class FGO extends Fragment {
         });
 
         pr=new ProbabilityRandom();
-        try {
-            pr.add(getString(R.string.hero5),0.01);
-            pr.add(getString(R.string.hero4),0.03);
-            pr.add(getString(R.string.hero3),0.4);
-            pr.add(getString(R.string.cloth5),0.04);
-            pr.add(getString(R.string.cloth4),0.12);
-            pr.add(getString(R.string.cloth3),0.4);
-        }catch (Exception e){
-
-        }
+        pr.add(getString(R.string.hero5),0.01);
+        pr.add(getString(R.string.hero4),0.03);
+        pr.add(getString(R.string.hero3),0.4);
+        pr.add(getString(R.string.cloth5),0.04);
+        pr.add(getString(R.string.cloth4),0.12);
+        pr.add(getString(R.string.cloth3),0.4);
 
         return view;
     }
