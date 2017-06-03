@@ -20,11 +20,7 @@ public class FGO extends Fragment {
     private EditText times;
     private Button chou;
     private TextView result;
-    private enum Prize{
-        hero5,hero4,hero3,cloth5,cloth4,cloth3
-    }
-    private Prize[] seed=new Prize[100];
-
+    private ProbabilityRandom pr;
     public FGO() {
         // Required empty public constructor
     }
@@ -62,51 +58,27 @@ public class FGO extends Fragment {
                 StringBuilder sb=new StringBuilder();
                 for(int i=1;i<=t;i++){
                     sb.append(getString(R.string.tx).replaceFirst("times",String.valueOf(i))+": ");
-                    sb.append(random()+"\n");
+                    sb.append(pr.rand()+"\n");
                 }
                 result.setText(sb.toString());
             }
         });
 
-        //gen seed
-        int idx=0;
-        seed[idx++]=Prize.hero5;
-        for(int i=0;i<3;i++){
-            seed[idx++]=Prize.hero4;
-        }
-        for(int i=0;i<40;i++){
-            seed[idx++]=Prize.hero3;
-        }
-        for(int i=0;i<4;i++){
-            seed[idx++]=Prize.cloth5;
-        }
-        for(int i=0;i<12;i++){
-            seed[idx++]=Prize.cloth4;
-        }
-        for(int i=0;i<40;i++){
-            seed[idx++]=Prize.cloth3;
+        pr=new ProbabilityRandom();
+        try {
+            pr.add(getString(R.string.hero5),0.01);
+            pr.add(getString(R.string.hero4),0.03);
+            pr.add(getString(R.string.hero3),0.4);
+            pr.add(getString(R.string.cloth5),0.04);
+            pr.add(getString(R.string.cloth4),0.12);
+            pr.add(getString(R.string.cloth3),0.4);
+        }catch (Exception e){
+
         }
 
         return view;
     }
-    private String random(){
-        Random rand=new Random();
-        switch(seed[rand.nextInt(100)]){
-            case hero5:
-                return getString(R.string.hero5);
-            case hero4:
-                return getString(R.string.hero4);
-            case hero3:
-                return getString(R.string.hero3);
-            case cloth5:
-                return getString(R.string.cloth5);
-            case cloth4:
-                return getString(R.string.cloth4);
-            case cloth3:
-                return getString(R.string.cloth3);
-        }
-        return null;
-    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
