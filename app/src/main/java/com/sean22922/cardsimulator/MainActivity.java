@@ -16,9 +16,13 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
-    private PopupWindow about;
+        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,SB.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
     private Toolbar toolbar;
+    private FragmentTransaction ft;
+    private FGO f_fgo=null;
+    private CC f_cc=null;
+    private SB f_sb=null;
+    private Custom f_custom=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,22 +88,27 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        ft=getSupportFragmentManager().beginTransaction();
         switch (id){
             case R.id.FGO:
-                FragmentTransaction ftf=getSupportFragmentManager().beginTransaction();
-                ftf.replace(R.id.container,FGO.newInstance(0));
-                ftf.commitAllowingStateLoss();
+                if(f_fgo==null)f_fgo=FGO.newInstance(0);
+                ft.replace(R.id.container,f_fgo);
+                ft.commitAllowingStateLoss();
                 break;
             case R.id.CC:
-                FragmentTransaction ftc=getSupportFragmentManager().beginTransaction();
-                ftc.replace(R.id.container,CC.newInstance(1));
-                ftc.commitAllowingStateLoss();
+                if(f_cc==null)f_cc=CC.newInstance(1);
+                ft.replace(R.id.container,f_cc);
+                ft.commitAllowingStateLoss();
+                break;
+            case R.id.SB:
+                if(f_sb==null)f_sb=SB.newInstance(2);
+                ft.replace(R.id.container,f_sb);
+                ft.commitAllowingStateLoss();
                 break;
             case R.id.customize:
-                FragmentTransaction ftcs=getSupportFragmentManager().beginTransaction();
-                ftcs.replace(R.id.container,Custom.newInstance(2));
-                ftcs.commitAllowingStateLoss();
+                if(f_custom==null)f_custom=Custom.newInstance(3);
+                ft.replace(R.id.container,f_custom);
+                ft.commitAllowingStateLoss();
                 break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

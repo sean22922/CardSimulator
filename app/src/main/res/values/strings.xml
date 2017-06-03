@@ -15,6 +15,7 @@
     <string name="nav_button_4">自訂格式</string>
     <string name="title_activity_settings">設定</string>
     <string name="cc_frag">cc_frag</string>
+    <string name="sb_frag">sb_frag</string>
     <string name="custom_frag">custom_frag</string>
     <string name="chou">抽下去!</string>
     <string name="chou_times">抽獎次數</string>
@@ -85,6 +86,9 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
