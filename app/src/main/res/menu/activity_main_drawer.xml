@@ -9,7 +9,10 @@
             android:id="@+id/CC"
             android:title="@string/nav_button_2" />
         <item
-            android:id="@+id/customize"
+            android:id="@+id/SB"
             android:title="@string/nav_button_3" />
+        <item
+            android:id="@+id/customize"
+            android:title="@string/nav_button_4" />
     </group>
 </menu>
