@@ -56,11 +56,7 @@ public class CC extends Fragment {
                     result.setText(getString(R.string.wrongtimes));
                 }
                 StringBuilder sb=new StringBuilder();
-                for(int i=1;i<=t;i++){
-                    sb.append(getString(R.string.tx).replaceFirst("times",String.valueOf(i))+": ");
-                    sb.append(pr.rand()+"\n");
-                }
-                result.setText(sb.toString());
+                result.setText(pr.rand(t,getString(R.string.template_times),getString(R.string.linebreak)));
             }
         });
 

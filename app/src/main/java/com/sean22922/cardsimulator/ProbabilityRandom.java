@@ -28,4 +28,14 @@ public class ProbabilityRandom{
         }
         return null;
     }
+
+    String rand(int times,String prefixtemplate,String suffix){
+        StringBuilder sb=new StringBuilder();
+        for(int i=1;i<=times;i++){
+            sb.append(String.format(prefixtemplate,i));
+            sb.append(this.rand());
+            sb.append(String.format(suffix));
+        }
+        return sb.toString();
+    }
 }

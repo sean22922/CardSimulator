@@ -19,7 +19,7 @@ public class FGO extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private EditText times;
-    private Button chou;
+    private Button chou,chou1,chou10;
     private TextView result;
     private ProbabilityRandom pr;
     public FGO() {
@@ -46,6 +46,8 @@ public class FGO extends Fragment {
         View view=inflater.inflate(R.layout.fragment_fgo, container, false);
         times=(EditText) view.findViewById(R.id.times);
         chou=(Button)view.findViewById(R.id.chou);
+        chou1=(Button)view.findViewById(R.id.chou1);
+        chou10=(Button)view.findViewById(R.id.chou10);
         result=(TextView)view.findViewById(R.id.result);
         result.setMovementMethod(new ScrollingMovementMethod());
         chou.setOnClickListener(new Button.OnClickListener(){
@@ -57,12 +59,19 @@ public class FGO extends Fragment {
                 }catch (NumberFormatException  e){
                     result.setText(getString(R.string.wrongtimes));
                 }
-                StringBuilder sb=new StringBuilder();
-                for(int i=1;i<=t;i++){
-                    sb.append(getString(R.string.tx).replaceFirst("times",String.valueOf(i))+": ");
-                    sb.append(pr.rand()+"\n");
-                }
-                result.setText(sb.toString());
+                result.setText(pr.rand(t,getString(R.string.template_times),getString(R.string.linebreak)));
+            }
+        });
+        chou1.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                result.setText(pr.rand(1,getString(R.string.template_times),getString(R.string.linebreak)));
+            }
+        });
+        chou10.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                result.setText(pr.rand(10,getString(R.string.template_times),getString(R.string.linebreak)));
             }
         });
 

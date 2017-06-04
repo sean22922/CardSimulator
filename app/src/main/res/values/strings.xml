@@ -7,6 +7,7 @@
     <string name="ok">確定</string>
     <string name="about">關於</string>
     <string name="aboutmsg">版本:alpha(未開發完成)\n作者:\n sean22922(政府關員)&amp;maple3142\n特別感謝:\n所有在Github幫忙的各位以及maple3142</string>
+
     <string name="nav_text_view_1">抽卡模擬器</string>
     <string name="nav_text_view_2">歐氣滿滿的一天</string>
     <string name="nav_button_1">Fate/Grand Order</string>
@@ -17,11 +18,15 @@
     <string name="cc_frag">cc_frag</string>
     <string name="sb_frag">sb_frag</string>
     <string name="custom_frag">custom_frag</string>
+
     <string name="chou">抽下去!</string>
+    <string name="chou1">抽1次</string>
+    <string name="chou10">抽10次</string>
     <string name="chou_times">抽獎次數</string>
     <string name="result">抽獎結果區</string>
     <string name="wrongtimes">次數錯誤!</string>
-    <string name="tx">第 times 次</string>
+    <string name="template_times">第 %d 次: </string>
+    <string name="linebreak">\n</string>
 
     <!--FGO-->
     <string name="hero5">5*從者</string>
