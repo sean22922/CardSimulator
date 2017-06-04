@@ -16,12 +16,12 @@ import android.view.MenuItem;
 import android.widget.PopupWindow;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,SB.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,THBJ.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
     private Toolbar toolbar;
     private FragmentTransaction ft;
     private FGO f_fgo=null;
     private CC f_cc=null;
-    private SB f_sb=null;
+    private THBJ f_thbj=null;
     private Custom f_custom=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,9 +100,9 @@ public class MainActivity extends AppCompatActivity
                 ft.replace(R.id.container,f_cc);
                 ft.commitAllowingStateLoss();
                 break;
-            case R.id.SB:
-                if(f_sb==null)f_sb=SB.newInstance(2);
-                ft.replace(R.id.container,f_sb);
+            case R.id.THBJ:
+                if(f_thbj==null)f_thbj=THBJ.newInstance(2);
+                ft.replace(R.id.container,f_thbj);
                 ft.commitAllowingStateLoss();
                 break;
             case R.id.customize:

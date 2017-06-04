@@ -9,17 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class SB extends Fragment {
+public class THBJ extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public SB() {
+    public THBJ() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static SB newInstance(int id) {
-        SB fragment = new SB();
+    public static THBJ newInstance(int id) {
+        THBJ fragment = new THBJ();
         Bundle args = new Bundle();
         args.putInt("id",id);
         fragment.setArguments(args);
@@ -35,7 +35,7 @@ public class SB extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sb, container, false);
+        return inflater.inflate(R.layout.fragment_thbj, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

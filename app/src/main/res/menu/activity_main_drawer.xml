@@ -9,7 +9,7 @@
             android:id="@+id/CC"
             android:title="@string/nav_button_2" />
         <item
-            android:id="@+id/SB"
+            android:id="@+id/THBJ"
             android:title="@string/nav_button_3" />
         <item
             android:id="@+id/customize"

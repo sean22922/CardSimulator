@@ -6,16 +6,16 @@
 
     <string name="ok">確定</string>
     <string name="about">關於</string>
-    <string name="aboutmsg">版本:alpha(未開發完成)\n作者:\n sean22922(政府關員)&amp;maple3142\n特別感謝:\n所有在Github幫忙的各位以及maple3142</string>
+    <string name="aboutmsg">版本:alpha(未開發完成)\n作者:\nsean22922(政府關員)&amp;maple3142\n特別感謝:\n所有在Github幫忙的各位以及maple3142</string>
     <string name="nav_text_view_1">抽卡模擬器</string>
     <string name="nav_text_view_2">歐氣滿滿的一天</string>
     <string name="nav_button_1">Fate/Grand Order</string>
     <string name="nav_button_2">鎖鏈戰記</string>
-    <string name="nav_button_3">召喚圖板</string>
+    <string name="nav_button_3">天華百劍 -斬-</string>
     <string name="nav_button_4">自訂格式</string>
     <string name="title_activity_settings">設定</string>
     <string name="cc_frag">cc_frag</string>
-    <string name="sb_frag">sb_frag</string>
+    <string name="thbj_frag">thbj_frag</string>
     <string name="custom_frag">custom_frag</string>
     <string name="chou">抽下去!</string>
     <string name="chou_times">抽獎次數</string>
