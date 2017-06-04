@@ -18,6 +18,8 @@
     <string name="thbj_frag">thbj_frag</string>
     <string name="custom_frag">custom_frag</string>
 
+    <string name="open_left_navbar_to_use">打開左邊的側欄來使用本app</string>
+
     <string name="FGO">Fate/Grand Order</string>
     <string name="CC">Chain Chronicle鎖鏈戰記</string>
     <string name="THBJ">天華百劍 -斬-</string>
@@ -44,4 +46,7 @@
     <string name="cc_ssr">SSR</string>
     <string name="cc_sr">SR</string>
     <string name="cc_r">R</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -25,9 +25,10 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,THBJ.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,THBJ.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener,Default.OnFragmentInteractionListener {
     private Toolbar toolbar;
     private FragmentTransaction ft;
+    private Default f_def=null;
     private FGO f_fgo=null;
     private CC f_cc=null;
     private THBJ f_thbj=null;
@@ -47,7 +48,10 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        ft=getSupportFragmentManager().beginTransaction();
+        if(f_def==null)f_def=Default.newInstance(100);
+        ft.add(R.id.container,f_def);
+        ft.commit();
     }
 
     @Override
