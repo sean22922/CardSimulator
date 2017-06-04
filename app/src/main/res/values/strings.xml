@@ -19,6 +19,11 @@
     <string name="sb_frag">sb_frag</string>
     <string name="custom_frag">custom_frag</string>
 
+    <string name="FGO">Fate/Grand Order</string>
+    <string name="CC">Chain Chronicle鎖鏈戰記</string>
+    <string name="SB">Summons Board召喚圖板</string>
+    <string name="Custom">自訂</string>
+
     <string name="chou">抽下去!</string>
     <string name="chou1">抽1次</string>
     <string name="chou10">抽10次</string>

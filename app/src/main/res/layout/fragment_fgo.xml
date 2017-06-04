@@ -53,12 +53,10 @@
             </LinearLayout>
 
 
-
-            <TextView
+            <ListView
                 android:id="@+id/result"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/result"
+                android:layout_height="match_parent"
                 android:scrollbars="vertical"/>
 
         </LinearLayout>

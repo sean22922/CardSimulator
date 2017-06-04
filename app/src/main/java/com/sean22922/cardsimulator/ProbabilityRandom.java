@@ -1,5 +1,6 @@
 package com.sean22922.cardsimulator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +35,16 @@ public class ProbabilityRandom{
         for(int i=1;i<=times;i++){
             sb.append(String.format(prefixtemplate,i));
             sb.append(this.rand());
-            sb.append(String.format(suffix));
+            sb.append(suffix);
         }
         return sb.toString();
+    }
+
+    ArrayList randList(int times){
+        ArrayList ar=new ArrayList();
+        for(int i=1;i<=times;i++){
+            ar.add(this.rand());
+        }
+        return ar;
     }
 }

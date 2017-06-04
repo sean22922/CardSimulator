@@ -93,22 +93,26 @@ public class MainActivity extends AppCompatActivity
             case R.id.FGO:
                 if(f_fgo==null)f_fgo=FGO.newInstance(0);
                 ft.replace(R.id.container,f_fgo);
-                ft.commitAllowingStateLoss();
+                ft.commit();
+                setTitle(getString(R.string.FGO));
                 break;
             case R.id.CC:
                 if(f_cc==null)f_cc=CC.newInstance(1);
                 ft.replace(R.id.container,f_cc);
-                ft.commitAllowingStateLoss();
+                ft.commit();
+                setTitle(getString(R.string.CC));
                 break;
             case R.id.SB:
                 if(f_sb==null)f_sb=SB.newInstance(2);
                 ft.replace(R.id.container,f_sb);
-                ft.commitAllowingStateLoss();
+                ft.commit();
+                setTitle(getString(R.string.SB));
                 break;
             case R.id.customize:
                 if(f_custom==null)f_custom=Custom.newInstance(3);
                 ft.replace(R.id.container,f_custom);
-                ft.commitAllowingStateLoss();
+                ft.commit();
+                setTitle(getString(R.string.Custom));
                 break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

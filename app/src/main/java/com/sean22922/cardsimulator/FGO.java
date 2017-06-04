@@ -8,9 +8,12 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -20,8 +23,9 @@ public class FGO extends Fragment {
     private OnFragmentInteractionListener mListener;
     private EditText times;
     private Button chou,chou1,chou10;
-    private TextView result;
+    private ListView result;
     private ProbabilityRandom pr;
+    private ArrayAdapter<String> listAdapter;
     public FGO() {
         // Required empty public constructor
     }
@@ -48,33 +52,34 @@ public class FGO extends Fragment {
         chou=(Button)view.findViewById(R.id.chou);
         chou1=(Button)view.findViewById(R.id.chou1);
         chou10=(Button)view.findViewById(R.id.chou10);
-        result=(TextView)view.findViewById(R.id.result);
-        result.setMovementMethod(new ScrollingMovementMethod());
+        result=(ListView) view.findViewById(R.id.result);
         chou.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
                 int t=1;
                 try{
                     t=Integer.parseInt(times.getText().toString());
-                }catch (NumberFormatException  e){
-                    result.setText(getString(R.string.wrongtimes));
+                }catch (Exception  e){
+                    Toast.makeText(getView().getContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
                 }
-                result.setText(pr.rand(t,getString(R.string.template_times),getString(R.string.linebreak)));
+                listAdapter=new ArrayAdapter<String>(result.getContext(),R.layout.result_list,pr.randList(t));
+                result.setAdapter(listAdapter);
             }
         });
         chou1.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                result.setText(pr.rand(1,getString(R.string.template_times),getString(R.string.linebreak)));
+                listAdapter=new ArrayAdapter<String>(result.getContext(),R.layout.result_list,pr.randList(1));
+                result.setAdapter(listAdapter);
             }
         });
         chou10.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                result.setText(pr.rand(10,getString(R.string.template_times),getString(R.string.linebreak)));
+                listAdapter=new ArrayAdapter<String>(result.getContext(),R.layout.result_list,pr.randList(10));
+                result.setAdapter(listAdapter);
             }
         });
-
         pr=new ProbabilityRandom();
         pr.add(getString(R.string.hero5),0.01);
         pr.add(getString(R.string.hero4),0.03);
