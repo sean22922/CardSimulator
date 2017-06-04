@@ -33,12 +33,12 @@
     <string name="linebreak">\n</string>
 
     <!--FGO-->
-    <string name="hero5">5*從者</string>
-    <string name="hero4">4*從者</string>
-    <string name="hero3">3*從者</string>
-    <string name="cloth5">5*概念禮裝</string>
-    <string name="cloth4">4*概念禮裝</string>
-    <string name="cloth3">3*概念禮裝</string>
+    <string name="hero5">5☆從者</string>
+    <string name="hero4">4☆從者</string>
+    <string name="hero3">3☆從者</string>
+    <string name="cloth5">5☆概念禮裝</string>
+    <string name="cloth4">4☆概念禮裝</string>
+    <string name="cloth3">3☆概念禮裝</string>
 
     <!--CC-->
     <string name="cc_ssr">SSR</string>
