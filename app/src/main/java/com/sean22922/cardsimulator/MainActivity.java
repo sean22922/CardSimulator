@@ -1,6 +1,7 @@
 package com.sean22922.cardsimulator;
 
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -11,9 +12,17 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
+import android.text.method.TransformationMethod;
+import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,THBJ.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener {
@@ -68,8 +77,13 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.about) {
             AlertDialog.Builder b=new AlertDialog.Builder(MainActivity.this);
+            TextView msg=new TextView(toolbar.getContext());
+            msg.setText(Html.fromHtml(getString(R.string.aboutmsg)));
+            msg.setGravity(Gravity.CENTER_HORIZONTAL);
+            msg.setClickable(true);
+            msg.setTextColor(Color.BLACK);
+            b.setView(msg);
             b.setTitle(getString(R.string.about));
-            b.setMessage(R.string.aboutmsg);
             b.setPositiveButton(R.string.ok,new DialogInterface.OnClickListener(){
                 @Override
                 public void onClick(DialogInterface d,int witch){
