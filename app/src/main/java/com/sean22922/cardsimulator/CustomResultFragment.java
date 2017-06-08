@@ -1,12 +1,22 @@
 package com.sean22922.cardsimulator;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 
 /**
@@ -28,6 +38,12 @@ public class CustomResultFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+    private EditText times;
+    private Button chou,chou1,chou10;
+    private ListView lv;
+    private ListAdapter la;
+
+    public ProbabilityRandom pr=null;
 
     public CustomResultFragment() {
         // Required empty public constructor
@@ -60,11 +76,62 @@ public class CustomResultFragment extends Fragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_custom_result, container, false);
+
+        View view=inflater.inflate(R.layout.fragment_custom_result, container, false);
+        lv = (ListView) view.findViewById(R.id.result);
+        times=(EditText) view.findViewById(R.id.times);
+        chou=(Button)view.findViewById(R.id.chou);
+        chou1=(Button)view.findViewById(R.id.chou1);
+        chou10=(Button)view.findViewById(R.id.chou10);
+        chou.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
+                if(pr.getTotal()!=1.0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    return;
+                }
+                int t=1;
+                try{
+                    t=Integer.parseInt(times.getText().toString());
+                }catch (Exception  e){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                }
+                la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(t));
+                lv.setAdapter(la);
+            }
+        });
+        chou1.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
+                if(pr.getTotal()!=1.0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    return;
+                }
+                la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(1));
+                lv.setAdapter(la);
+            }
+        });
+        chou10.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
+                if(pr.getTotal()!=1.0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    return;
+                }
+                la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(10));
+                lv.setAdapter(la);
+            }
+        });
+        if(pr==null)
+            pr=new ProbabilityRandom();
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

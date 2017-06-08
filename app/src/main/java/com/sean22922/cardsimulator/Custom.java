@@ -41,6 +41,7 @@ public class Custom extends Fragment {
         tabHost.setup(view.getContext(),getChildFragmentManager(),R.id.custom_child_container);
         tabHost.addTab(tabHost.newTabSpec(getString(R.string.tab_p)).setIndicator(getString(R.string.tab_p)), CustomProbabilityFragment.class,null);
         tabHost.addTab(tabHost.newTabSpec(getString(R.string.tab_r)).setIndicator(getString(R.string.tab_r)), CustomResultFragment.class,null);
+        tabHost.setCurrentTab(1);
 
         return view;
     }

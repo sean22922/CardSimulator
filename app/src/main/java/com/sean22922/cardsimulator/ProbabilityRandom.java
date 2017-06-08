@@ -1,5 +1,7 @@
 package com.sean22922.cardsimulator;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,8 +19,11 @@ public class ProbabilityRandom{
     void add(String s,Double probability){
         p.put(s,probability);
         total+=probability;
+        Log.i(s,String.valueOf(probability));
     }
-
+    double getTotal(){
+        return total;
+    }
     String rand(){
         double r=Math.random(),now=0;
         for(Map.Entry<String,Double> e:p.entrySet()){
