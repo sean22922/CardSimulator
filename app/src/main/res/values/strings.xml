@@ -54,6 +54,9 @@
     <string name="thbj_armor_sr">SR裝備</string>
     <string name="thbj_armor_r">R裝備</string>
 
+    <!--Custom-->
+    <string name="tab_p">機率</string>
+    <string name="tab_r">結果</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

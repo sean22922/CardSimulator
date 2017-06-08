@@ -25,7 +25,14 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener,FGO.OnFragmentInteractionListener,CC.OnFragmentInteractionListener,THBJ.OnFragmentInteractionListener,Custom.OnFragmentInteractionListener,Default.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        FGO.OnFragmentInteractionListener,
+        CC.OnFragmentInteractionListener,
+        THBJ.OnFragmentInteractionListener,
+        Custom.OnFragmentInteractionListener,
+        Default.OnFragmentInteractionListener,
+        CustomResultFragment.OnFragmentInteractionListener,
+        CustomProbabilityFragment.OnFragmentInteractionListener {
     private Toolbar toolbar;
     private FragmentTransaction ft;
     private Default f_def=null;
