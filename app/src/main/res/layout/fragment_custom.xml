@@ -16,7 +16,6 @@
             android:weightSum="10">
 
             <TabWidget
-                android:id="@+id/tabs"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

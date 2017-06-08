@@ -11,7 +11,6 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017/6/8.

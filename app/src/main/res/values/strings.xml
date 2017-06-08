@@ -13,10 +13,6 @@
     <string name="nav_button_2">鎖鏈戰記</string>
     <string name="nav_button_3">天華百劍 -斬-</string>
     <string name="nav_button_4">自訂格式</string>
-    <string name="title_activity_settings">設定</string>
-    <string name="cc_frag">cc_frag</string>
-    <string name="thbj_frag">thbj_frag</string>
-    <string name="custom_frag">custom_frag</string>
 
     <string name="open_left_navbar_to_use">打開左邊的側欄來使用本app</string>
 
@@ -29,10 +25,7 @@
     <string name="chou1">抽1次</string>
     <string name="chou10">抽10次</string>
     <string name="chou_times">抽獎次數</string>
-    <string name="result">抽獎結果區</string>
     <string name="wrongtimes">次數錯誤!</string>
-    <string name="template_times">第 %d 次: </string>
-    <string name="linebreak">\n</string>
 
     <!--FGO-->
     <string name="hero5">5☆從者</string>
