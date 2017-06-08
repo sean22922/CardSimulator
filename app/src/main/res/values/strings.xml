@@ -47,6 +47,13 @@
     <string name="cc_sr">SR</string>
     <string name="cc_r">R</string>
 
+    <!--THBJ-->
+    <string name="thbj_weapon_ur">UR巫劍</string>
+    <string name="thbj_weapon_sr">SR巫劍</string>
+    <string name="thbj_armor_ur">UR裝備</string>
+    <string name="thbj_armor_sr">SR裝備</string>
+    <string name="thbj_armor_r">R裝備</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
