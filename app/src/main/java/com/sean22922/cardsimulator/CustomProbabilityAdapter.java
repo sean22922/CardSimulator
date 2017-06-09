@@ -73,10 +73,12 @@ public class CustomProbabilityAdapter extends BaseAdapter {
     }
     public void push(CustomItem i){
         items.add(i);
+        notifyDataSetChanged();
     }
     public void pop(){
         if(items.size()>0){
             items.remove(items.size()-1);
+            notifyDataSetChanged();
         }
     }
     public ArrayList<CustomItem> getList(){

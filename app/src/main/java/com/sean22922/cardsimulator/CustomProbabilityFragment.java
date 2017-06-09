@@ -69,13 +69,14 @@ public class CustomProbabilityFragment extends Fragment {
             for(String ss:s){
                 pa.push(new CustomItem(ss));
             }
-            update(pa.getList());
+            save(pa.getList());
         }
     }
-    private void update(ArrayList<CustomItem> l){
+    private void save(ArrayList<CustomItem> l){
         HashSet<String> hs=new HashSet<>();
         for(CustomItem i:l){
-            hs.add(i.toString());
+            if(i.vaild())
+                hs.add(i.toString());
         }
         sp.edit().putStringSet("list",hs).commit();
     }
@@ -105,7 +106,7 @@ public class CustomProbabilityFragment extends Fragment {
         save.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
-                update(pa.getList());
+                save(pa.getList());
             }
         });
         lv.setAdapter(pa);
