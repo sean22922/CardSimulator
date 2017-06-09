@@ -19,7 +19,10 @@ public class ProbabilityRandom{
     void add(String s,Double probability){
         p.put(s,probability);
         total+=probability;
-        Log.i(s,String.valueOf(probability));
+    }
+    void add(CustomItem ci){
+        p.put(ci.name,ci.p);
+        total+=ci.p;
     }
     double getTotal(){
         return total;

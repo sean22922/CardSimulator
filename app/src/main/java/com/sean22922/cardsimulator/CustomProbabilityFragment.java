@@ -37,11 +37,10 @@ public class CustomProbabilityFragment extends Fragment {
 
     private SharedPreferences sp;
     private OnFragmentInteractionListener mListener;
-    private ArrayList<CustomItem> ar;
     private ListView lv;
-    private Button add,del;
-    private CustomProbabilityAdapter pa;
+    private Button add,del,save;
 
+    public CustomProbabilityAdapter pa;
     public CustomProbabilityFragment() {
         // Required empty public constructor
     }
@@ -64,12 +63,19 @@ public class CustomProbabilityFragment extends Fragment {
         }
     }
 
-    public void onListChangeHandler(ArrayList<CustomItem> l){
+
+    private void load(){
+        Set<String> s=sp.getStringSet("list",new HashSet<String>());
+        if(s.size()!=0){
+            for(String ss:s){
+                pa.push(new CustomItem(ss));
+            }
+            update(pa.getList());
+        }
+    }
+    private void update(ArrayList<CustomItem> l){
         HashSet<String> hs=new HashSet<>();
-        CustomResultFragment crf=(CustomResultFragment)getFragmentManager().findFragmentByTag(getString(R.string.tab_r));
-        crf.pr=new ProbabilityRandom();
         for(CustomItem i:l){
-            crf.pr.add(i.name,i.p);
             hs.add(i.toString());
         }
         sp.edit().putStringSet("list",hs).commit();
@@ -83,36 +89,28 @@ public class CustomProbabilityFragment extends Fragment {
         lv=(ListView)view.findViewById(R.id.list_input);
         add=(Button) view.findViewById(R.id.addbtn);
         del=(Button)view.findViewById(R.id.delbtn);
-        ar=new ArrayList<CustomItem>();
-        pa=new CustomProbabilityAdapter(lv.getContext(),ar);
+        save=(Button)view.findViewById(R.id.save_p);
+        pa=new CustomProbabilityAdapter(lv.getContext());
         add.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
-                ar.add(new CustomItem());
-                pa.updateList(ar);
-                lv.setAdapter(pa);
+                pa.push(new CustomItem());
             }
         });
         del.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v){
-                if(ar.size()>0){
-                    ar.remove(ar.size()-1);
-                    pa.updateList(ar);
-                    lv.setAdapter(new CustomProbabilityAdapter(lv.getContext(),ar));
-                }
-                else Toast.makeText(getActivity().getApplicationContext(),getString(R.string.no_item_can_be_remove),Toast.LENGTH_SHORT);
+                pa.pop();
+            }
+        });
+        save.setOnClickListener(new Button.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                update(pa.getList());
             }
         });
         lv.setAdapter(pa);
-        pa.setOnChangeListener(this);
-        Set<String> s=sp.getStringSet("list",new HashSet<String>());
-        if(s.size()!=0){
-            for(String ss:s){
-                ar.add(new CustomItem(ss));
-            }
-            pa.updateList(ar);
-        }
+        load();
         return view;
     }
 

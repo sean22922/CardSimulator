@@ -1,6 +1,7 @@
 package com.sean22922.cardsimulator;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,9 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -39,6 +43,7 @@ public class CustomResultFragment extends Fragment {
     private Button chou,chou1,chou10;
     private ListView lv;
     private ListAdapter la;
+    private SharedPreferences sp;
 
     public ProbabilityRandom pr=null;
 
@@ -126,8 +131,15 @@ public class CustomResultFragment extends Fragment {
                 lv.setAdapter(la);
             }
         });
-        if(pr==null)
-            pr=new ProbabilityRandom();
+        pr=new ProbabilityRandom();
+        sp=this.getActivity().getSharedPreferences(getActivity().getApplicationContext().getPackageName(),Context.MODE_PRIVATE);
+        Set<String> s=sp.getStringSet("list",new HashSet<String>());
+        if(s.size()!=0){
+            for(String ss:s){
+                CustomItem ci=new CustomItem(ss);
+                pr.add(ci);
+            }
+        }
         return view;
     }
 

@@ -19,14 +19,9 @@ import java.util.ArrayList;
 public class CustomProbabilityAdapter extends BaseAdapter {
     private LayoutInflater inf;
     private ArrayList<CustomItem> items;
-    private CustomProbabilityFragment cf=null;
-    public CustomProbabilityAdapter(Context ctx,ArrayList<CustomItem> list){
+    public CustomProbabilityAdapter(Context ctx){
         inf=LayoutInflater.from(ctx);
-        this.items=list;
-    }
-
-    public void setOnChangeListener(CustomProbabilityFragment cf){
-        this.cf=cf;
+        items=new ArrayList<>();
     }
 
     @Override
@@ -55,9 +50,6 @@ public class CustomProbabilityAdapter extends BaseAdapter {
 
                 }
                 items.set(position,new CustomItem(item.getText().toString(),p));
-                if(cf!=null){
-                    cf.onListChangeHandler(items);
-                }
             }
         });
         probability.addTextChangedListener(new TextWatcher() {
@@ -75,12 +67,17 @@ public class CustomProbabilityAdapter extends BaseAdapter {
 
                 }
                 items.set(position,new CustomItem(item.getText().toString(),p));
-                if(cf!=null){
-                    cf.onListChangeHandler(items);
-                }
             }
         });
         return cv;
+    }
+    public void push(CustomItem i){
+        items.add(i);
+    }
+    public void pop(){
+        if(items.size()>0){
+            items.remove(items.size()-1);
+        }
     }
     public ArrayList<CustomItem> getList(){
         return this.items;
