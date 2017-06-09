@@ -1,5 +1,6 @@
 package com.sean22922.cardsimulator;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
@@ -13,11 +14,16 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -83,21 +89,14 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.about) {
-            AlertDialog.Builder b=new AlertDialog.Builder(MainActivity.this);
-            TextView msg=new TextView(toolbar.getContext());
-            msg.setText(Html.fromHtml(getString(R.string.aboutmsg)));
-            msg.setGravity(Gravity.CENTER_HORIZONTAL);
-            msg.setClickable(true);
-            msg.setTextColor(Color.BLACK);
-            b.setView(msg);
-            b.setTitle(getString(R.string.about));
-            b.setPositiveButton(R.string.ok,new DialogInterface.OnClickListener(){
-                @Override
-                public void onClick(DialogInterface d,int witch){
+            ((TextView)new AlertDialog.Builder(this).setTitle(getString(R.string.about))
+                    .setMessage(Html.fromHtml(getString(R.string.aboutmsg)))
+                    .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                }
-            });
-            b.create().show();
+                        }
+                    }).show().findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
             return true;
         }
 
