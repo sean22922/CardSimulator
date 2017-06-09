@@ -6,7 +6,7 @@
 
     <string name="ok">ok</string>
     <string name="about">about</string>
-    <string name="aboutmsg">Version:beta&lt;br>作者:&lt;br> &lt;a href="https://home.gamer.com.tw/sean22922">sean22922&lt;/a>&amp;&lt;a href="https://home.gamer.com.tw/kirby123">maple3142&lt;/a>&lt;br>Special Thanks:&lt;br> for everyone contribute on &lt;a href="https://github.com/sean22922/CardSimulator">Github&lt;/a> and maple3142</string>
+    <string name="aboutmsg">Version:beta&lt;br>Developer:&lt;br> &lt;a href="https://home.gamer.com.tw/sean22922">sean22922&lt;/a>&amp;&lt;a href="https://home.gamer.com.tw/kirby123">maple3142&lt;/a>&lt;br>Special Thanks:&lt;br> for everyone contribute on &lt;a href="https://github.com/sean22922/CardSimulator">Github&lt;/a> and maple3142</string>
     <string name="nav_image_view_1">App icon</string>
     <string name="nav_text_view_1">CardSimulator</string>
     <string name="nav_text_view_2">Wish you good luck</string>
@@ -32,9 +32,9 @@
     <string name="hero5">5☆Servants</string>
     <string name="hero4">4☆Servants</string>
     <string name="hero3">3☆Servants</string>
-    <string name="cloth5">5☆概念禮裝</string>
-    <string name="cloth4">4☆概念禮裝</string>
-    <string name="cloth3">3☆概念禮裝</string>
+    <string name="cloth5">5☆Craft Essence</string>
+    <string name="cloth4">4☆Craft Essence</string>
+    <string name="cloth3">3☆Craft Essence</string>
 
     <!--CC-->
     <string name="cc_ssr">SSR</string>
@@ -42,11 +42,11 @@
     <string name="cc_r">R</string>
 
     <!--THBJ-->
-    <string name="thbj_weapon_ur">UR巫劍</string>
-    <string name="thbj_weapon_sr">SR巫劍</string>
-    <string name="thbj_armor_ur">UR裝備</string>
-    <string name="thbj_armor_sr">SR裝備</string>
-    <string name="thbj_armor_r">R裝備</string>
+    <string name="thbj_weapon_ur">UR Miko Ken(Sword)</string>
+    <string name="thbj_weapon_sr">SR Miko Ken(Sword)</string>
+    <string name="thbj_armor_ur">UR Equipment</string>
+    <string name="thbj_armor_sr">SR Equipment</string>
+    <string name="thbj_armor_r">R Equipment</string>
 
     <!--Custom-->
     <string name="tab_p">Probability</string>
