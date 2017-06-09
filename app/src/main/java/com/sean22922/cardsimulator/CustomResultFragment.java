@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +82,7 @@ public class CustomResultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view=inflater.inflate(R.layout.fragment_custom_result, container, false);
+        View view=inflater.inflate(R.layout.standard_draw_layout, container, false);
         lv = (ListView) view.findViewById(R.id.result);
         times=(EditText) view.findViewById(R.id.times);
         chou=(Button)view.findViewById(R.id.chou);
@@ -92,7 +91,6 @@ public class CustomResultFragment extends Fragment {
         chou.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
                 if(pr.getTotal()!=1.0){
                     Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
                     return;
@@ -110,7 +108,6 @@ public class CustomResultFragment extends Fragment {
         chou1.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
                 if(pr.getTotal()!=1.0){
                     Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
                     return;
@@ -122,7 +119,6 @@ public class CustomResultFragment extends Fragment {
         chou10.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Log.i("CSCSCSC",String.valueOf(pr.getTotal()));
                 if(pr.getTotal()!=1.0){
                     Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
                     return;

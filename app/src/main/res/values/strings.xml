@@ -56,5 +56,4 @@
     <string name="item">物品</string>
     <string name="probability">機率(%)</string>
     <string name="save">儲存</string>
-    <string name="no_item_can_be_remove">沒有元素可以被移除</string>
 </resources>
