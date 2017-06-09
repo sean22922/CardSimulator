@@ -4,34 +4,34 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="ok">確定</string>
-    <string name="about">關於</string>
-    <string name="aboutmsg">版本:alpha(未開發完成)&lt;br>作者:&lt;br> &lt;a href="https://home.gamer.com.tw/sean22922">sean22922(政府關員)&lt;/a>&amp;&lt;a href="https://home.gamer.com.tw/maple3142">maple3142&lt;/a>&lt;br>特別感謝:&lt;br>所有在&lt;a href="https://github.com/sean22922/CardSimulator">Github&lt;/a>幫忙的各位以及maple3142</string>
+    <string name="ok">ok</string>
+    <string name="about">about</string>
+    <string name="aboutmsg">Version:beta&lt;br>作者:&lt;br> &lt;a href="https://home.gamer.com.tw/sean22922">sean22922&lt;/a>&amp;&lt;a href="https://home.gamer.com.tw/maple3142">maple3142&lt;/a>&lt;br>Special Thanks:&lt;br> for everyone contribute on &lt;a href="https://github.com/sean22922/CardSimulator">Github&lt;/a> and maple3142</string>
     <string name="nav_image_view_1">App icon</string>
-    <string name="nav_text_view_1">抽卡模擬器</string>
-    <string name="nav_text_view_2">歐氣滿滿的一天</string>
+    <string name="nav_text_view_1">CardSimulator</string>
+    <string name="nav_text_view_2">Wish you good luck</string>
     <string name="nav_button_1">Fate/Grand Order</string>
-    <string name="nav_button_2">鎖鏈戰記</string>
-    <string name="nav_button_3">天華百劍 -斬-</string>
-    <string name="nav_button_4">自訂格式</string>
+    <string name="nav_button_2">Chain Chronicle</string>
+    <string name="nav_button_3">Tenka Hyakken</string>
+    <string name="nav_button_4">Custom</string>
 
-    <string name="open_left_navbar_to_use">打開左邊的側欄來使用本app</string>
+    <string name="open_left_navbar_to_use">swipe the left drawer to use this app</string>
 
     <string name="FGO">Fate/Grand Order</string>
-    <string name="CC">Chain Chronicle鎖鏈戰記</string>
-    <string name="THBJ">天華百劍 -斬-</string>
-    <string name="Custom">自訂</string>
+    <string name="CC">Chain Chronicle</string>
+    <string name="THBJ">Tenka Hyakken</string>
+    <string name="Custom">Custom</string>
 
-    <string name="chou">抽下去!</string>
-    <string name="chou1">抽1次</string>
-    <string name="chou10">抽10次</string>
-    <string name="chou_times">抽獎次數</string>
-    <string name="wrongtimes">次數錯誤!</string>
+    <string name="chou">Draw</string>
+    <string name="chou1">Draw 1 times</string>
+    <string name="chou10">Draw 10 times</string>
+    <string name="chou_times">Draw times</string>
+    <string name="wrongtimes">Wrong times</string>
 
     <!--FGO-->
-    <string name="hero5">5☆從者</string>
-    <string name="hero4">4☆從者</string>
-    <string name="hero3">3☆從者</string>
+    <string name="hero5">5☆Servants</string>
+    <string name="hero4">4☆Servants</string>
+    <string name="hero3">3☆Servants</string>
     <string name="cloth5">5☆概念禮裝</string>
     <string name="cloth4">4☆概念禮裝</string>
     <string name="cloth3">3☆概念禮裝</string>
@@ -49,11 +49,11 @@
     <string name="thbj_armor_r">R裝備</string>
 
     <!--Custom-->
-    <string name="tab_p">機率</string>
-    <string name="tab_r">結果</string>
+    <string name="tab_p">Probability</string>
+    <string name="tab_r">Result</string>
     <string name="add_item">+</string>
     <string name="del_item">-</string>
-    <string name="item">物品</string>
-    <string name="probability">機率(%)</string>
-    <string name="save">儲存</string>
+    <string name="item">Item</string>
+    <string name="probability">Probability(%)</string>
+    <string name="save">Save</string>
 </resources>
