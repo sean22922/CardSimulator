@@ -17,6 +17,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
+import de.psdev.licensesdialog.*;
+import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20;
+import de.psdev.licensesdialog.model.Notice;
+import de.psdev.licensesdialog.model.Notices;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,
@@ -89,7 +93,17 @@ public class MainActivity extends AppCompatActivity
                         public void onClick(DialogInterface dialog, int which) {
 
                         }
-                    }).show().findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+                    })
+                    .show().findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+            return true;
+        }
+        if(id == R.id.license){
+            Notices ns=new Notices();
+            ns.addNotice(new Notice("MaterialTabHost","https://github.com/yanzm/MaterialTabHost","Copyright 2014 Yuki Anzai",new ApacheSoftwareLicense20()));
+            ns.addNotice(new Notice("LicensesDialog ","https://github.com/PSDev/LicensesDialog","Copyright 2013-2017 Philip Schiffer",new ApacheSoftwareLicense20()));
+            new LicensesDialog.Builder(this)
+                    .setNotices(ns)
+                    .build().show();
             return true;
         }
 
