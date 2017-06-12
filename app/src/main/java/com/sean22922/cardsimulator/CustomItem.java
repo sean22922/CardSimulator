@@ -19,6 +19,9 @@ public class CustomItem {
         name=ar[0];
         p=Double.parseDouble(ar[1]);
     }
+    boolean vaild(){
+        return p>0&&(!name.isEmpty());
+    }
     @Override
     public String toString(){
         return name+" "+p;
