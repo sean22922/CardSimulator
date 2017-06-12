@@ -4,16 +4,21 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTabHost;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import net.yanzm.mth.MaterialTabHost;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Custom extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-
     public Custom() {
         // Required empty public constructor
     }
@@ -35,14 +40,24 @@ public class Custom extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view=inflater.inflate(R.layout.fragment_custom, container, false);
-
-        FragmentTabHost tabHost=(FragmentTabHost)view.findViewById(R.id.tabhost);
-        tabHost.setup(view.getContext(),getChildFragmentManager(),R.id.custom_child_container);
-        tabHost.addTab(tabHost.newTabSpec(getString(R.string.tab_p)).setIndicator(getString(R.string.tab_p)), CustomProbabilityFragment.class,null);
-        tabHost.addTab(tabHost.newTabSpec(getString(R.string.tab_r)).setIndicator(getString(R.string.tab_r)), CustomResultFragment.class,null);
-        tabHost.setCurrentTab(1);
-
+        final MaterialTabHost tabHost=(MaterialTabHost)view.findViewById(R.id.tabhost);
+        tabHost.addTab(getString(R.string.tab_p));
+        tabHost.addTab(getString(R.string.tab_r));
+        tabHost.setType(MaterialTabHost.Type.FullScreenWidth);
+        tabHost.onPageScrolled(0,0,0);
+        final List<Fragment> l=new ArrayList<>();
+        l.add(new CustomProbabilityFragment());
+        l.add(new CustomResultFragment());
+        getChildFragmentManager().beginTransaction().add(R.id.fl,l.get(0)).commit();
+        tabHost.setOnTabChangeListener(new MaterialTabHost.OnTabChangeListener(){
+            @Override
+            public void onTabSelected(int position) {
+                tabHost.onPageScrolled(position,0,0);
+                getChildFragmentManager().beginTransaction().replace(R.id.fl,l.get(position)).commit();
+            }
+        });
         return view;
     }
 
