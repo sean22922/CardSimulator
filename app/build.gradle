@@ -40,5 +40,6 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.3.1'
     compile 'net.yanzm:mth:1.0.4'
     compile 'de.psdev.licensesdialog:licensesdialog:1.8.2'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
     testCompile 'junit:junit:4.12'
 }

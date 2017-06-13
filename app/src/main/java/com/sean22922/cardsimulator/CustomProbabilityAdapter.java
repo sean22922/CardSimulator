@@ -29,10 +29,12 @@ public class CustomProbabilityAdapter extends BaseAdapter {
         final EditText item;
         final EditText probability;
         cv=inf.inflate(R.layout.probability_input_item,null);
+        CustomItem ci=items.get(position);
         item=(EditText)cv.findViewById(R.id.item_name);
-        item.setText(items.get(position).name);
+        if(ci.name!=null&&!ci.name.isEmpty())
+            item.setText(items.get(position).name);
         probability=(EditText)cv.findViewById(R.id.item_probability);
-        probability.setText(String.valueOf((int)(items.get(position).p*100)));
+        probability.setText(String.valueOf((int)(ci.p*100)));
         probability.setFilters(new InputFilter[]{new MyInputFilter(0,100)});
 
         item.addTextChangedListener(new TextWatcher() {

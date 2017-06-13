@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -15,13 +15,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/times"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:text="0"
                 android:hint="@string/chou_times"
-                android:inputType="number" />
+                android:inputType="number"
+                app:met_floatingLabel="highlight"/>
 
             <Button
                 android:id="@+id/chou"
