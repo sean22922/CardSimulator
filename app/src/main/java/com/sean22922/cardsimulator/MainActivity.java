@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity
     private CC f_cc=null;
     private THBJ f_thbj=null;
     private Custom f_custom=null;
+    private LicensesDialog ld;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,15 @@ public class MainActivity extends AppCompatActivity
         if(f_def==null)f_def=Default.newInstance(100);
         ft.add(R.id.container,f_def);
         ft.commit();
+        Notices ns=new Notices();
+        ns.addNotice(new Notice("MaterialTabHost","https://github.com/yanzm/MaterialTabHost","Copyright 2014 Yuki Anzai",new ApacheSoftwareLicense20()));
+        ns.addNotice(new Notice("LicensesDialog ","https://github.com/PSDev/LicensesDialog","Copyright 2013-2017 Philip Schiffer",new ApacheSoftwareLicense20()));
+        ns.addNotice(new Notice("MaterialEditText","https://github.com/rengwuxian/MaterialEditText","Copyright 2014 rengwuxian",new ApacheSoftwareLicense20()));
+        ld=new LicensesDialog.Builder(this)
+                .setTitle(R.string.notice)
+                .setCloseText(R.string.close)
+                .setNotices(ns)
+                .build();
     }
 
     @Override
@@ -99,15 +109,7 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
         if(id == R.id.license){
-            Notices ns=new Notices();
-            ns.addNotice(new Notice("MaterialTabHost","https://github.com/yanzm/MaterialTabHost","Copyright 2014 Yuki Anzai",new ApacheSoftwareLicense20()));
-            ns.addNotice(new Notice("LicensesDialog ","https://github.com/PSDev/LicensesDialog","Copyright 2013-2017 Philip Schiffer",new ApacheSoftwareLicense20()));
-            ns.addNotice(new Notice("MaterialEditText","https://github.com/rengwuxian/MaterialEditText","Copyright 2014 rengwuxian",new ApacheSoftwareLicense20()));
-            new LicensesDialog.Builder(this)
-                    .setTitle(R.string.notice)
-                    .setCloseText(R.string.close)
-                    .setNotices(ns)
-                    .build().show();
+            ld.show();
             return true;
         }
 
