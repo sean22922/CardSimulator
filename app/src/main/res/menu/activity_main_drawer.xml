@@ -11,8 +11,13 @@
         <item
             android:id="@+id/THBJ"
             android:title="@string/nav_button_3" />
+
+        <item
+            android:id="@+id/YUYUYUI"
+            android:title="@string/nav_button_4" />
+
         <item
             android:id="@+id/customize"
-            android:title="@string/nav_button_4" />
+            android:title="@string/nav_button_5" />
     </group>
 </menu>

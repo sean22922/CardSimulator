@@ -56,7 +56,7 @@ public class FGO extends Fragment {
                 try{
                     t=Integer.parseInt(times.getText().toString());
                 }catch (Exception  e){
-                    Toast.makeText(getView().getContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    Toast.makeText(getView().getContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT).show();
                 }
                 listAdapter=new ArrayAdapter<String>(result.getContext(),R.layout.result_list,pr.randList(t));
                 result.setAdapter(listAdapter);

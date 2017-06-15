@@ -14,7 +14,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
-public class CC extends Fragment {
+public class YUYUYUI extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private EditText times;
@@ -22,13 +22,13 @@ public class CC extends Fragment {
     private ListView result;
     private ProbabilityRandom pr;
     private ArrayAdapter<String> listAdapter;
-    public CC() {
+    public YUYUYUI() {
         // Required empty public constructor
     }
 
     // TODO: Rename and change types and number of parameters
-    public static CC newInstance(int id) {
-        CC fragment = new CC();
+    public static YUYUYUI newInstance(int id) {
+        YUYUYUI fragment = new YUYUYUI();
         Bundle args = new Bundle();
         args.putInt("id",id);
         fragment.setArguments(args);
@@ -48,7 +48,7 @@ public class CC extends Fragment {
         chou=(Button)view.findViewById(R.id.chou);
         chou1=(Button)view.findViewById(R.id.chou1);
         chou10=(Button)view.findViewById(R.id.chou10);
-        result=(ListView)view.findViewById(R.id.result);
+        result=(ListView) view.findViewById(R.id.result);
         chou.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -77,9 +77,9 @@ public class CC extends Fragment {
             }
         });
         pr=new ProbabilityRandom();
-        pr.add(getString(R.string.cc_ssr),0.07);
-        pr.add(getString(R.string.cc_sr),0.2);
-        pr.add(getString(R.string.cc_r),0.73);
+        pr.add(getString(R.string.yuyuyui_ssr),0.07);
+        pr.add(getString(R.string.yuyuyui_sr),0.25);
+        pr.add(getString(R.string.yuyuyui_r),0.68);
 
         return view;
     }
@@ -122,4 +122,5 @@ public class CC extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }

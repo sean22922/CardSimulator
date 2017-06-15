@@ -31,13 +31,15 @@ public class MainActivity extends AppCompatActivity
         Custom.OnFragmentInteractionListener,
         Default.OnFragmentInteractionListener,
         CustomResultFragment.OnFragmentInteractionListener,
-        CustomProbabilityFragment.OnFragmentInteractionListener {
+        CustomProbabilityFragment.OnFragmentInteractionListener,
+        YUYUYUI.OnFragmentInteractionListener {
     private Toolbar toolbar;
     private FragmentTransaction ft;
     private Default f_def=null;
     private FGO f_fgo=null;
     private CC f_cc=null;
     private THBJ f_thbj=null;
+    private YUYUYUI f_yuyuyui=null;
     private Custom f_custom=null;
     private LicensesDialog ld;
     @Override
@@ -141,8 +143,14 @@ public class MainActivity extends AppCompatActivity
                 ft.commitAllowingStateLoss();
                 setTitle(getString(R.string.THBJ));
                 break;
+            case R.id.YUYUYUI:
+                if(f_yuyuyui==null)f_yuyuyui=YUYUYUI.newInstance(3);
+                ft.replace(R.id.container,f_yuyuyui);
+                ft.commitAllowingStateLoss();
+                setTitle(getString(R.string.YUYUYUI));
+                break;
             case R.id.customize:
-                if(f_custom==null)f_custom=Custom.newInstance(3);
+                if(f_custom==null)f_custom=Custom.newInstance(4);
                 ft.replace(R.id.container,f_custom);
                 ft.commit();
                 setTitle(getString(R.string.Custom));

@@ -16,13 +16,15 @@
     <string name="nav_button_1">Fate/Grand Order</string>
     <string name="nav_button_2">鎖鏈戰記</string>
     <string name="nav_button_3">天華百劍 -斬-</string>
-    <string name="nav_button_4">自訂格式</string>
+    <string name="nav_button_4">結城友奈是勇者</string>
+    <string name="nav_button_5">自訂格式</string>
 
     <string name="open_left_navbar_to_use">打開左邊的側欄來使用本app</string>
 
     <string name="FGO">Fate/Grand Order</string>
     <string name="CC">Chain Chronicle鎖鏈戰記</string>
     <string name="THBJ">天華百劍 -斬-</string>
+    <string name="YUYUYUI">結城友奈是勇者</string>
     <string name="Custom">自訂</string>
 
     <string name="chou">抽下去!</string>
@@ -30,6 +32,7 @@
     <string name="chou10">抽10次</string>
     <string name="chou_times">抽獎次數</string>
     <string name="wrongtimes">次數錯誤!</string>
+    <string name="wrongprob">機率總和必須是1</string>
 
     <!--FGO-->
     <string name="hero5">5☆從者</string>
@@ -50,6 +53,11 @@
     <string name="thbj_armor_ur">UR裝備</string>
     <string name="thbj_armor_sr">SR裝備</string>
     <string name="thbj_armor_r">R裝備</string>
+
+    <!--YUYUYUI-->
+    <string name="yuyuyui_ssr">SSR</string>
+    <string name="yuyuyui_sr">SR</string>
+    <string name="yuyuyui_r">R</string>
 
     <!--Custom-->
     <string name="tab_p">機率</string>

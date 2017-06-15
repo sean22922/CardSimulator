@@ -92,14 +92,14 @@ public class CustomResultFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
                     return;
                 }
                 int t=1;
                 try{
                     t=Integer.parseInt(times.getText().toString());
                 }catch (Exception  e){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
                 }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(t));
                 lv.setAdapter(la);
@@ -109,7 +109,7 @@ public class CustomResultFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
                     return;
                 }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(1));
@@ -120,7 +120,7 @@ public class CustomResultFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongtimes),Toast.LENGTH_SHORT);
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
                     return;
                 }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(10));
