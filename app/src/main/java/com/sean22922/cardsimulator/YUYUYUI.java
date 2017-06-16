@@ -77,9 +77,9 @@ public class YUYUYUI extends Fragment {
             }
         });
         pr=new ProbabilityRandom();
-        pr.add(getString(R.string.yuyuyui_ssr),0.07);
+        pr.add(getString(R.string.yuyuyui_ssr),0.05);
         pr.add(getString(R.string.yuyuyui_sr),0.25);
-        pr.add(getString(R.string.yuyuyui_r),0.68);
+        pr.add(getString(R.string.yuyuyui_r),0.7);
 
         return view;
     }
