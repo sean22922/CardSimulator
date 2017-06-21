@@ -18,6 +18,11 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.sean22922.cardsimulator.custom.Custom;
+import com.sean22922.cardsimulator.custom.CustomProbabilityFragment;
+import com.sean22922.cardsimulator.custom.CustomResultFragment;
+import com.sean22922.cardsimulator.fgo.FGO;
+
 import de.psdev.licensesdialog.LicensesDialog;
 import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20;
 import de.psdev.licensesdialog.model.Notice;

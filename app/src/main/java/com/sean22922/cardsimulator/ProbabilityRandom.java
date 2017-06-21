@@ -1,5 +1,7 @@
 package com.sean22922.cardsimulator;
 
+import com.sean22922.cardsimulator.custom.CustomItem;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,21 +13,21 @@ import java.util.Map;
 public class ProbabilityRandom{
     private HashMap<String,Double> p=new HashMap<>();
     private double total=0;
-    ProbabilityRandom(){
+    public ProbabilityRandom(){
 
     }
-    void add(String s,Double probability){
+    public void add(String s,Double probability){
         p.put(s,probability);
         total+=probability;
     }
-    void add(CustomItem ci){
+    public void add(CustomItem ci){
         p.put(ci.name,ci.p);
         total+=ci.p;
     }
-    double getTotal(){
+    public double getTotal(){
         return total;
     }
-    String rand(){
+    public String rand(){
         double r=Math.random(),now=0;
         for(Map.Entry<String,Double> e:p.entrySet()){
             if(r<now+e.getValue()){
@@ -36,7 +38,7 @@ public class ProbabilityRandom{
         return null;
     }
 
-    String rand(int times,String prefixtemplate,String suffix){
+    public String rand(int times,String prefixtemplate,String suffix){
         StringBuilder sb=new StringBuilder();
         for(int i=1;i<=times;i++){
             sb.append(String.format(prefixtemplate,i));
@@ -46,7 +48,7 @@ public class ProbabilityRandom{
         return sb.toString();
     }
 
-    ArrayList randList(int times){
+    public ArrayList randList(int times){
         ArrayList ar=new ArrayList();
         for(int i=1;i<=times;i++){
             ar.add(this.rand());
