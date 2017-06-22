@@ -10,5 +10,5 @@ E-mail: [sean22922@ymail.com](mailto:sean22922@ymail.com)
 
 
 > TODO:
-> [ ] List item animation
-> [ ] Item color
+> - [ ] List item animation
+> - [ ] Item color
