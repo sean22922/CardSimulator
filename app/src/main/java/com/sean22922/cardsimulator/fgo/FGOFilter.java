@@ -1,9 +1,7 @@
 package com.sean22922.cardsimulator.fgo;
 
 import android.content.Context;
-import android.content.res.Resources;
 
-import com.sean22922.cardsimulator.MainActivity;
 import com.sean22922.cardsimulator.ProbabilityRandom;
 import com.sean22922.cardsimulator.R;
 
@@ -30,10 +28,10 @@ public class FGOFilter {
         if(all3){
             al.remove(al.size()-1);
             ProbabilityRandom pr=new ProbabilityRandom();
-            pr.add(ctx.getString(R.string.hero5),0.05);
-            pr.add(ctx.getString(R.string.hero4),0.15);
-            pr.add(ctx.getString(R.string.cloth5),0.2);
-            pr.add(ctx.getString(R.string.cloth4),0.6);
+            pr.add(ctx.getString(R.string.hero5),0.01);
+            pr.add(ctx.getString(R.string.hero4),0.03);
+            pr.add(ctx.getString(R.string.cloth5),0.04);
+            pr.add(ctx.getString(R.string.cloth4),0.12);
             al.add(pr.rand());
         }
 
@@ -48,9 +46,9 @@ public class FGOFilter {
             al.remove(al.size()-2);
             ProbabilityRandom pr=new ProbabilityRandom();
             /*I am not sure about these chances*/
-            pr.add(ctx.getString(R.string.hero5),0.04);
-            pr.add(ctx.getString(R.string.hero4),0.08);
-            pr.add(ctx.getString(R.string.hero3),0.88);
+            pr.add(ctx.getString(R.string.hero5),0.01);
+            pr.add(ctx.getString(R.string.hero4),0.03);
+            pr.add(ctx.getString(R.string.hero3),0.4);
             al.add(pr.rand());
         }
         return al;

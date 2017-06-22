@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,6 +76,12 @@ public class THBJ extends Fragment {
             public void onClick(View v) {
                 listAdapter=new ArrayAdapter<String>(result.getContext(),R.layout.result_list,pr.randList(10));
                 result.setAdapter(listAdapter);
+            }
+        });
+        result.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+                Toast.makeText(getView().getContext(),result.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show();
             }
         });
         pr=new ProbabilityRandom();

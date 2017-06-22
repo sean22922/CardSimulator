@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -94,10 +95,6 @@ public class CustomResultFragment extends Fragment {
         chou.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 int t=1;
                 try{
                     t=Integer.parseInt(times.getText().toString());
@@ -111,10 +108,6 @@ public class CustomResultFragment extends Fragment {
         chou1.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(1));
                 lv.setAdapter(la);
             }
@@ -122,12 +115,14 @@ public class CustomResultFragment extends Fragment {
         chou10.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(pr.getTotal()!=1.0){
-                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
-                    return;
-                }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(10));
                 lv.setAdapter(la);
+            }
+        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+                Toast.makeText(getView().getContext(),lv.getItemAtPosition(position).toString(),Toast.LENGTH_SHORT).show();
             }
         });
         pr=new ProbabilityRandom();

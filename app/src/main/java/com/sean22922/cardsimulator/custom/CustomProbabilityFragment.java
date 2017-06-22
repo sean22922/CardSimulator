@@ -73,13 +73,18 @@ public class CustomProbabilityFragment extends Fragment {
             }
         }
     }
-    private void save(ArrayList<CustomItem> l){
-        HashSet<String> hs=new HashSet<>();
-        for(CustomItem i:l){
-            if(i.vaild())
-                hs.add(i.toString());
-        }
-        sp.edit().putStringSet("list",hs).commit();
+    private void save(final ArrayList<CustomItem> l){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                final HashSet<String> hs=new HashSet<>();
+                for(CustomItem i:l){
+                    if(i.vaild())
+                        hs.add(i.toString());
+                }
+                sp.edit().putStringSet("list",hs).commit();
+            }
+        }).start();
     }
 
     @Override

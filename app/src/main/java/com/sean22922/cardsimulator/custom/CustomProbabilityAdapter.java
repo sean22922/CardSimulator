@@ -2,7 +2,6 @@ package com.sean22922.cardsimulator.custom;
 
 import android.content.Context;
 import android.text.Editable;
-import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 
-import com.sean22922.cardsimulator.MyInputFilter;
 import com.sean22922.cardsimulator.R;
 
 import java.util.ArrayList;
@@ -38,7 +36,6 @@ public class CustomProbabilityAdapter extends BaseAdapter {
             item.setText(items.get(position).name);
         probability=(EditText)cv.findViewById(R.id.item_probability);
         probability.setText(String.valueOf((int)(ci.p*100)));
-        probability.setFilters(new InputFilter[]{new MyInputFilter(0,100)});
 
         item.addTextChangedListener(new TextWatcher() {
             @Override

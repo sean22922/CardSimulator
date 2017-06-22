@@ -65,7 +65,7 @@
     <string name="add_item">+</string>
     <string name="del_item">-</string>
     <string name="item">物品</string>
-    <string name="probability">機率(%)</string>
+    <string name="probability">機率</string>
     <string name="save">儲存</string>
 
 </resources>
