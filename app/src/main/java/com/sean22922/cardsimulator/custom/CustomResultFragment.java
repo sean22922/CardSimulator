@@ -101,6 +101,10 @@ public class CustomResultFragment extends Fragment {
                 }catch (Exception  e){
                     Toast.makeText(getActivity().getApplicationContext(),getString(R.string.wrongprob),Toast.LENGTH_SHORT).show();
                 }
+                if(pr.getTotal()==0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.noitemset),Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(t));
                 lv.setAdapter(la);
             }
@@ -108,6 +112,10 @@ public class CustomResultFragment extends Fragment {
         chou1.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if(pr.getTotal()==0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.noitemset),Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(1));
                 lv.setAdapter(la);
             }
@@ -115,6 +123,10 @@ public class CustomResultFragment extends Fragment {
         chou10.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
+                if(pr.getTotal()==0){
+                    Toast.makeText(getActivity().getApplicationContext(),getString(R.string.noitemset),Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 la=new ArrayAdapter<String>(lv.getContext(),R.layout.result_list,pr.randList(10));
                 lv.setAdapter(la);
             }
