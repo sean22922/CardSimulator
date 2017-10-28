@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion 27
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.sean22922.cardsimulator"
         minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 3
-        versionName "v0.4-beta"
+        targetSdkVersion 27
+        versionCode 4
+        versionName "0.5-beta"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -34,11 +34,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.0.1'
-    compile 'com.android.support:design:26.0.1'
+    compile 'com.android.support:appcompat-v7:27.0.0'
+    compile 'com.android.support:design:27.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:support-v4:26.0.1'
-    compile 'com.android.support:support-vector-drawable:26.0.1'
+    compile 'com.android.support:support-v4:27.0.0'
+    compile 'com.android.support:support-vector-drawable:27.0.0'
     compile 'net.yanzm:mth:1.0.4'
     compile 'de.psdev.licensesdialog:licensesdialog:1.8.2'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'
