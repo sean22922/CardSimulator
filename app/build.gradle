@@ -11,6 +11,10 @@ android {
         versionName "0.7-beta"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
     lintOptions {
         disable 'GoogleAppIndexingWarning'
@@ -42,7 +46,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.vectordrawable:vectordrawable'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'net.yanzm:mth:1.0.4'
     implementation 'de.psdev.licensesdialog:licensesdialog:2.1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
