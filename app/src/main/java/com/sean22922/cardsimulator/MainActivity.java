@@ -1,6 +1,5 @@
 package com.sean22922.cardsimulator;
 
-import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import com.google.android.material.navigation.NavigationView;
@@ -23,6 +22,8 @@ import com.sean22922.cardsimulator.custom.CustomProbabilityFragment;
 import com.sean22922.cardsimulator.custom.CustomResultFragment;
 import com.sean22922.cardsimulator.fgo.FGO;
 
+import java.util.Objects;
+
 import de.psdev.licensesdialog.LicensesDialog;
 import de.psdev.licensesdialog.licenses.ApacheSoftwareLicense20;
 import de.psdev.licensesdialog.model.Notice;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity
         CustomResultFragment.OnFragmentInteractionListener,
         CustomProbabilityFragment.OnFragmentInteractionListener,
         YUYUYUI.OnFragmentInteractionListener {
-    private Toolbar toolbar;
     private FragmentTransaction ft;
     private Default f_def=null;
     private FGO f_fgo=null;
@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -104,15 +104,12 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.about) {
-            ((TextView)new AlertDialog.Builder(this).setTitle(getString(R.string.about))
+            ((TextView) Objects.requireNonNull(new AlertDialog.Builder(this).setTitle(getString(R.string.about))
                     .setMessage(Html.fromHtml(getString(R.string.aboutmsg)))
-                    .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                    .setPositiveButton(getString(R.string.ok), (dialog, which) -> {
 
-                        }
                     })
-                    .show().findViewById(android.R.id.message)).setMovementMethod(LinkMovementMethod.getInstance());
+                    .show().findViewById(android.R.id.message))).setMovementMethod(LinkMovementMethod.getInstance());
             return true;
         }
         if(id == R.id.license){
@@ -123,7 +120,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
